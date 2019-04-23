@@ -1,0 +1,285 @@
+/*
+====================================
+
+Gallery UI CSS
+
+====================================
+*/
+
+body {
+  left: 0;
+  margin: 0;
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+------------------------------------
+Content
+------------------------------------ */
+.content {
+  background: #eee;
+}
+
+/*
+------------------------------------
+Menu
+------------------------------------ */
+.menu {
+  background: #222;
+  left: -320px;
+  height: 100%;
+  position: fixed;
+  width: 320px;
+  z-index: 10;
+}
+
+.menu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  border-bottom: 1px solid #636366;
+  line-height: 45px;
+}
+
+.menu a {
+  color: #999;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: block;
+  padding: 0 25px;
+}
+
+.menu a:hover {
+  color: #fff;
+  background: #333;
+}
+
+.menu a.selected,
+.menu a:active {
+  color: #fff;
+  background: DodgerBlue;
+}
+
+/*
+------------------------------------
+Buttons
+------------------------------------ */
+.close-button,
+.menu-button {
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 25px 25px 25px 65px;
+  height: 68px;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu-button {
+  background: #eee;
+  background: rgba(255,255,255,.85);
+  position: fixed;
+  width: 100%;
+  z-index: 5;
+}
+
+.menu-button:hover {
+  background: #fff;
+}
+
+.close-button {
+  color: #666;
+}
+
+.close-button:hover {
+  color: #fff;
+}
+
+.close-button .icon {
+  font-size: 30px;
+  position: absolute;
+  top: 14px;
+  left: 25px;
+}
+
+.close-button:hover .icon {
+  color: DodgerBlue;
+}
+
+.menu-button .icon {
+  fill: #999;
+  position: absolute;
+  top: 23px;
+  left: 25px;
+}
+
+.menu-button:hover {
+  color: #000;
+  background: rgba(255,255,255,.85);
+}
+
+.menu-button:hover .icon {
+  fill: DodgerBlue;
+}
+
+.open .menu-button {
+  color: #bbb;
+  cursor: default;
+}
+
+.open .menu-button .icon {
+  fill: #bbb;
+}
+
+
+/*
+------------------------------------
+Gallery
+------------------------------------
+*/
+.gallery {
+  padding-top: 68px;
+}
+
+.cards {
+  font-size: 1em;
+  line-height: 1.4em;
+  list-style: none;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.cards li {
+  background: #fff;
+  position: relative;
+  width: 100%;
+}
+.cards li a,
+.cards li a img {
+  display: block;
+  position: relative;
+}
+.cards li a img {
+  max-width: 100%;
+}
+.cards li a {
+  overflow: hidden;
+  text-decoration: none;
+  color: #999;
+}
+.cards li a div {
+  background: #fff;
+  min-height: 120px;
+  padding: 25px 30px;
+  box-sizing: border-box;
+}
+.cards li a div span {
+  display: block;
+}
+
+.caption-title {
+  font-weight: bold;
+}
+
+.caption-desc {
+  font-size: .85em;
+}
+
+/*
+------------------------------------
+Images (Lazy Loading)
+------------------------------------ */
+img {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+img[data-src] {
+  opacity: 0;
+  min-height: 150px;
+}
+
+/*
+------------------------------------
+Media Queries
+------------------------------------ */
+@media (min-width: 750px) {
+
+  .gallery {
+    padding: 88px 20px 20px;
+  }
+
+  .cards {
+    min-height: 1600px;
+    overflow: hidden;
+  }
+
+  .cards li {
+    float: left;
+    width: 50%;
+    background: none;
+  }
+
+  .open .cards li {
+    width: 100%;
+  }
+
+  .cards li a {
+    background: none;
+    margin: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 1px 4px #ccc;
+  }
+
+  .cards li a div {
+    height: 120px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+  .cards li {
+    width: 33.33333333%;
+  }
+
+  .open .cards li {
+    width: 50%;
+  }
+
+}
+
+@media (min-width: 1400px) {
+
+  .gallery {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .cards li {
+    width: 25%;
+  }
+
+  .open .cards li {
+    width: 33.33333333%;
+  }
+
+}
+
+@media (min-width: 1800px) {
+
+  .open .cards li {
+    width: 25%;
+  }
+
+}
